@@ -33,7 +33,7 @@ DNSDB_API=""
 # PassiveTotal
 # URL : https://community.riskiq.com/
 #    - Go to account settings
-# Example : PASSIVE_API="admin@sudomy.id:1c235d10cbc66b28d59e796a13"
+# Example : PASSIVE_API="admin@omnidiscovery.id:1c235d10cbc66b28d59e796a13"
 
 PASSIVE_API="" 
 

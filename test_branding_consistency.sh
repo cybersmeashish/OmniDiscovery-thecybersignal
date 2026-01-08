@@ -12,7 +12,7 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SUDOMY_DIR="$SCRIPT_DIR/Sudomy"
+OMNIDISCOVERY_DIR="$SCRIPT_DIR/OmniDiscovery"
 ITERATIONS=10
 
 echo "=== Property Test: Branding Consistency in Output ==="
@@ -23,7 +23,7 @@ test_banner_branding() {
     local iteration=$1
     echo "Iteration $iteration: Testing banner branding..."
     
-    cd "$SUDOMY_DIR"
+    cd "$OMNIDISCOVERY_DIR"
     
     # Capture help output
     local help_output
@@ -55,7 +55,7 @@ test_usage_examples() {
     local iteration=$1
     echo "Iteration $iteration: Testing usage examples..."
     
-    cd "$SUDOMY_DIR"
+    cd "$OMNIDISCOVERY_DIR"
     
     # Capture help output
     local help_output
@@ -82,7 +82,7 @@ test_config_variables() {
     local iteration=$1
     echo "Iteration $iteration: Testing configuration variables..."
     
-    cd "$SUDOMY_DIR"
+    cd "$OMNIDISCOVERY_DIR"
     
     # Source the configuration and check variables
     source omnidiscovery.conf 2>/dev/null
@@ -110,7 +110,7 @@ test_error_messages() {
     local iteration=$1
     echo "Iteration $iteration: Testing error messages..."
     
-    cd "$SUDOMY_DIR"
+    cd "$OMNIDISCOVERY_DIR"
     
     # Test invalid option error message
     local error_output

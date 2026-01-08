@@ -12,7 +12,7 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SUDOMY_DIR="$SCRIPT_DIR/Sudomy"
+OMNIDISCOVERY_DIR="$SCRIPT_DIR/OmniDiscovery"
 TEST_DOMAIN="example.com"
 ITERATIONS=5
 
@@ -24,15 +24,15 @@ test_basic_execution() {
     local iteration=$1
     echo "Iteration $iteration: Testing basic execution..."
     
-    cd "$SUDOMY_DIR"
+    cd "$OMNIDISCOVERY_DIR"
     
     # Ensure API file exists
-    if [[ ! -f "sudomy.api" && -f "sudomy.api.dist" ]]; then
-        cp sudomy.api.dist sudomy.api
+    if [[ ! -f "omnidiscovery.api" && -f "omnidiscovery.api.dist" ]]; then
+        cp omnidiscovery.api.dist omnidiscovery.api
     fi
     
     # Test help functionality (help command may exit with code 1, which is normal)
-    bash sudomy --help >/dev/null 2>&1
+    bash omnidiscovery --help >/dev/null 2>&1
     local help_exit_code=$?
     if [[ $help_exit_code -ne 0 && $help_exit_code -ne 1 ]]; then
         echo "FAIL: Help command failed with unexpected exit code $help_exit_code in iteration $iteration"
@@ -40,14 +40,14 @@ test_basic_execution() {
     fi
     
     # Test banner display
-    if ! bash sudomy --help 2>/dev/null | grep -q "Sud⍥my"; then
+    if ! bash omnidiscovery --help 2>/dev/null | grep -q "OmniDiscovery"; then
         echo "FAIL: Banner not displaying correctly in iteration $iteration"
         return 1
     fi
     
     # Test configuration file loading
-    if [[ -f "sudomy.conf" ]]; then
-        if ! source sudomy.conf 2>/dev/null; then
+    if [[ -f "omnidiscovery.conf" ]]; then
+        if ! source omnidiscovery.conf 2>/dev/null; then
             echo "FAIL: Configuration loading failed in iteration $iteration"
             return 1
         fi
@@ -62,7 +62,7 @@ test_engine_loading() {
     local iteration=$1
     echo "Iteration $iteration: Testing engine loading..."
     
-    cd "$SUDOMY_DIR"
+    cd "$OMNIDISCOVERY_DIR"
     
     local engine_count=0
     local failed_engines=0
@@ -91,7 +91,7 @@ test_plugin_loading() {
     local iteration=$1
     echo "Iteration $iteration: Testing plugin loading..."
     
-    cd "$SUDOMY_DIR"
+    cd "$OMNIDISCOVERY_DIR"
     
     local plugin_count=0
     local failed_plugins=0

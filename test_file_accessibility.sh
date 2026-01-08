@@ -12,7 +12,7 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SUDOMY_DIR="$SCRIPT_DIR/Sudomy"
+OMNIDISCOVERY_DIR="$SCRIPT_DIR/OmniDiscovery"
 ITERATIONS=10
 
 echo "=== Property Test: Configuration File Compatibility ==="
@@ -23,7 +23,7 @@ test_file_existence() {
     local iteration=$1
     echo "Iteration $iteration: Testing file existence..."
     
-    cd "$SUDOMY_DIR"
+    cd "$OMNIDISCOVERY_DIR"
     
     # Test new file names exist
     local required_files=("omnidiscovery" "omnidiscovery.conf" "omnidiscovery.api.dist" "omnidiscovery.api")
@@ -55,7 +55,7 @@ test_config_loading() {
     local iteration=$1
     echo "Iteration $iteration: Testing configuration loading..."
     
-    cd "$SUDOMY_DIR"
+    cd "$OMNIDISCOVERY_DIR"
     
     # Test that configuration files can be sourced without errors
     if ! source omnidiscovery.conf 2>/dev/null; then
@@ -78,7 +78,7 @@ test_file_permissions() {
     local iteration=$1
     echo "Iteration $iteration: Testing file permissions..."
     
-    cd "$SUDOMY_DIR"
+    cd "$OMNIDISCOVERY_DIR"
     
     # Test that we can read configuration files
     if ! cat omnidiscovery.conf >/dev/null 2>&1; then

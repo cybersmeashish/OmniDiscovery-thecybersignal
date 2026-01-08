@@ -1,12 +1,12 @@
 #!/bin/bash
 
 #-Metadata----------------------------------------------------#
-#  Filename: Sudomy - Subdomain Enumeration & Analysis        #
+#  Filename: OmniDiscovery - Subdomain Enumeration & Analysis        #
 #-Author(s)---------------------------------------------------#
 #  Edo maland ~ @screetsec                                    #
 #  @mr-pmillz                                                 #
 #-Info--------------------------------------------------------#
-#  This file is part of Sudomy project                        #
+#  This file is part of OmniDiscovery project                        #
 #  Plugin Screenshots: Update = 2022-06-11                    #
 #	- aquatone					      #
 #-Licence-----------------------------------------------------#

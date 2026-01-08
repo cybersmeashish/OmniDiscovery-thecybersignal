@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 #-Metadata----------------------------------------------------#
-#  Filename: Sudomy - Subdomain Enumeration & Analysis        #
+#  Filename: OmniDiscovery - Subdomain Enumeration & Analysis        #
 #-Author(s)---------------------------------------------------#
 #  Edo maland ~ @screetsec                                    #
 #-Info--------------------------------------------------------#
-#  This file is part of Sudomy project                        #
+#  This file is part of OmniDiscovery project                        #
 #  Plugin webanalyze: Update = 2020-13-06                      #
 #-Licence-----------------------------------------------------#
 #  MIT License ~ http://opensource.org/licenses/MIT           #

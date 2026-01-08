@@ -1,6 +1,6 @@
 FROM chromedp/headless-shell:latest AS builder
 
-ENV PHANTOMJS_VERSION=2.1.1 PATH="$PATH:/usr/lib/sudomy"
+ENV PHANTOMJS_VERSION=2.1.1 PATH="$PATH:/usr/lib/omnidiscovery"
 RUN apt update \
     && apt install -y --no-install-recommends git \
     apt-transport-https \
@@ -37,17 +37,17 @@ COPY requirements.txt .
 RUN pip3 install -r requirements.txt
 
 FROM builder
-ENV PATH "$PATH:/usr/lib/sudomy/lib/bin"
+ENV PATH "$PATH:/usr/lib/omnidiscovery/lib/bin"
 ENV SHODAN_API="" CENSYS_API="" CENSYS_SECRET="" VIRUSTOTAL="" BINARYEDGE="" SECURITY_TRAILS="" DNSDB_API="" PASSIVE_API="" SPYSE_API="" FACEBOOK_TOKEN="" YOUR_WEBHOOK_URL=""
 RUN npm config set unsafe-perm true \
     # Install wappalyzer & wscat
     && npm i -g wappalyzer wscat
 
-ADD . /usr/lib/sudomy
-WORKDIR /usr/lib/sudomy
+ADD . /usr/lib/omnidiscovery
+WORKDIR /usr/lib/omnidiscovery
 COPY --from=builder /app/ ./
 
-VOLUME ["/usr/lib/sudomy"]
+VOLUME ["/usr/lib/omnidiscovery"]
 
 CMD ["--help"]
-ENTRYPOINT ["sudomy"]
+ENTRYPOINT ["omnidiscovery"]
