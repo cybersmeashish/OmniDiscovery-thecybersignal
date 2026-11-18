@@ -1,130 +1,27 @@
-# cybersignal-vulnerabilityscanner-by-cybersmeashish
+# OmniDiscovery: reconnaissance workflow adaptation
 
-cybersignal-vulnerabilityscanner-by-cybersmeashish is a modern, high-performance vulnerability scanning engine designed for precision, speed, and real-world attack simulation. Built on a flexible YAML-based detection framework, it enables security teams, researchers, and DevSecOps engineers to detect vulnerabilities with near-zero false positives.
+A Sudomy-derived reconnaissance workspace with a Bash controller, third-party tool plugins, and report templates.
 
-The scanner focuses on signal over noise, emulating attacker behavior rather than relying on shallow pattern matching.
+**Stage:** upstream adaptation. Network scans and external-provider integrations were not run during the portfolio review.
 
-## 🚀 Key Features
+## Provenance
 
-### 🔹 Template-Driven Vulnerability Detection
-- Simple and expressive YAML-based templates
-- Easily create, modify, and extend detection logic
-- Supports multi-step request chains to validate real exploitability
+The underlying project retains the [original MIT copyright and license](OmniDiscovery/LICENSE.md) and contains Sudomy documentation. Its architecture and integrations should be credited to the upstream project and tool authors. This repository's wrapper and branding changes do not establish authorship of the complete reconnaissance engine.
 
-### 🔹 Near Zero False Positives
-- Mimics real-world attack paths
-- Uses response validation, matchers, and conditional logic
-- Designed to confirm vulnerabilities, not just detect exposure
+## Inspect the actual implementation
 
-### 🔹 High Performance & Scalability
-- Ultra-fast parallel execution engine
-- Intelligent request clustering to reduce redundant calls
-- Capable of scanning large attack surfaces efficiently
+| Path | Material |
+| --- | --- |
+| [Controller](OmniDiscovery/omnidiscovery) | Bash reconnaissance orchestration |
+| [Plugins](OmniDiscovery/plugin) | Tool integration scripts |
+| [Engine sources](OmniDiscovery/engine) | External-provider lookup definitions |
+| [Report templates](OmniDiscovery/templates/report) | HTML report views |
+| [Project documentation](OmniDiscovery/README.md) | Existing usage and dependency notes |
 
-### 🔹 Community & Research Driven
-Supports community-contributed detection templates with rapid adaptation to:
-- New CVEs
-- Zero-days
-- Misconfigurations
-- Emerging attack techniques
+This is a reconnaissance adaptation, not a verified new YAML vulnerability engine. No false-positive rate, performance advantage, or current third-party API compatibility is claimed.
 
-### 🔹 CI/CD & DevSecOps Ready
-Seamless integration into CI/CD pipelines enabling:
-- Shift-left security
-- Regression vulnerability testing
-- Continuous security validation
+## Research next step
 
-### 🔹 Multi-Protocol Support
-cybersignal-vulnerabilityscanner supports a wide range of protocols and surfaces:
-- HTTP / HTTPS
-- TCP
-- DNS
-- SSL / TLS
-- WHOIS
-- JavaScript
-- Source Code
-- Cloud & Infrastructure endpoints
+Create an owned-domain fixture, record which integrations still work, distinguish passive lookups from active probes, and publish a versioned compatibility report. Do not execute bundled binaries or scripts without reviewing their provenance and the target authorization.
 
-### 🔹 Enterprise Integrations
-Integrates with leading security and DevOps platforms:
-- Jira (vulnerability tracking & remediation)
-- Splunk (SIEM correlation)
-- Elastic / ELK Stack
-- GitHub & GitLab (DevSecOps automation)
-
-## 🎯 Use Cases
-- Application & API security testing
-- Cloud security posture validation
-- Continuous attack surface monitoring
-- Bug bounty reconnaissance
-- DevSecOps vulnerability regression testing
-- Security research and detection engineering
-
-## 🧠 Design Philosophy
-cybersignal-vulnerabilityscanner is built on the following principles:
-- Accuracy over volume
-- Exploit validation over surface scanning
-- Automation with analyst-grade confidence
-- Security as code
-
-## 📂 Project Structure
-```
-cybersignal-vulnerabilityscanner-by-cybersmeashish/
-├── templates/
-│   ├── cves/
-│   ├── misconfigurations/
-│   ├── exposures/
-│   ├── cloud/
-│   └── custom/
-├── workflows/
-├── integrations/
-├── docs/
-├── examples/
-└── README.md
-```
-
-## ⚙️ Getting Started (High Level)
-1. Clone the repository
-2. Select or create YAML templates
-3. Define targets (domains, IPs, APIs, cloud endpoints)
-4. Run scans locally or inside CI/CD pipelines
-5. Export findings to SIEM, ticketing, or dashboards
-
-(Detailed installation and usage instructions can be added as the project matures.)
-
-## 🔐 Security & Responsible Usage
-This tool is intended for:
-- Authorized security testing
-- Defensive security research
-- Blue team and purple team operations
-
-⚠️ **Do not use against systems you do not own or have explicit permission to test.**
-
-## 🧩 Roadmap (Planned)
-- AI-assisted template generation
-- Risk scoring and prioritization engine
-- Cloud-native scanning modes (AWS, Azure, GCP)
-- Attack path correlation
-- Dashboard and reporting UI
-- Agentic AI-driven detection logic
-
-## 🤝 Contributing
-Contributions are welcome from:
-- Security researchers
-- Detection engineers
-- Cloud security practitioners
-- DevSecOps engineers
-
-Please submit:
-- New templates
-- Performance improvements
-- Documentation enhancements
-
-## 👤 Author
-**cybersmeashish**  
-Security Architect | Cloud & AI Security | Offensive & Defensive Research  
-GitHub: https://github.com/cybersmeashish
-
-## 📜 License
-This project is released under an open-source license.
-(You may specify MIT / Apache 2.0 / GPL based on your preference.)
+[Portfolio](https://github.com/cybersmeashish) · [Ethical hacking writeups](https://github.com/cybersmeashish/ctf-writeups)
