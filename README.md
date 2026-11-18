@@ -25,3 +25,7 @@ This is a reconnaissance adaptation, not a verified new YAML vulnerability engin
 Create an owned-domain fixture, record which integrations still work, distinguish passive lookups from active probes, and publish a versioned compatibility report. Do not execute bundled binaries or scripts without reviewing their provenance and the target authorization.
 
 [Portfolio](https://github.com/cybersmeashish) · [Ethical hacking writeups](https://github.com/cybersmeashish/ctf-writeups)
+
+## Consolidated workspace
+
+[Research roadmap](docs/research-roadmap.md) receives future work from the two former reconnaissance placeholders.
